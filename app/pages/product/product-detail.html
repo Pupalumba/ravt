@@ -1,0 +1,34 @@
+<ActionBar title="">
+    <NavigationButton text="go back" android.systemIcon = "ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+<ScrollView>
+    <GridLayout rows="auto, *" class="product-container" >
+        <StackLayout row="1">
+            <Carousel height="300" showIndicator="false" [class.visible]="listLoaded">
+                <CarouselItem id="slide1"  verticalAlignment="center" backgroundColor="#b3cde0" height="300">
+                    <Image [src]="images[0]" stretch ="fill" ></Image>
+                </CarouselItem>
+                <CarouselItem id="slide2" verticalAlignment="center" backgroundColor="#6497b1" height="300">
+                    <Image [src]="images[1]" stretch ="fill"></Image>
+                </CarouselItem>
+                <CarouselItem id="slide3" verticalAlignment="center" backgroundColor="#005b96" height="300">
+                    <Image [src]="images[2]" stretch ="fill"></Image>
+                </CarouselItem>
+            </Carousel>
+
+            <StackLayout class="product-info" [class.visible]="listLoaded">
+                <Label [text]="product.name" textWrap="true" class="title"></Label>
+                <Label [text]="product.description" textWrap="true" class="description"></Label>
+                <Label [text]="product.promotion ? product.promotionPrice + ' лв' : product.price + (checkForNumberType(product.price) ? ' лв' : '')" class="price" textWrap="true"></Label>
+            </StackLayout>
+        </StackLayout>
+
+        <DockLayout stretchLastChild="true" row="1" *ngIf="!listLoaded && !isLoading" class="error-message">
+            <Label [text]="errorMessage" textWrap="true"   horizontalAlignment="center" verticalAlignment="center"></Label>
+        </DockLayout>
+
+        <ActivityIndicator row="1" [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+    </GridLayout>
+</ScrollView>
+
+

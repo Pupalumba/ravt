@@ -1,0 +1,18 @@
+StackLayout {
+    height: 350;
+    margin-right:25;
+    margin-left:25;
+}
+
+.submit-button {
+    background-color: #1799b9;
+    color: white;
+    margin-top: 20;
+    padding: 12 0;
+    width: 150;
+}
+
+Label{
+    font-size: 20;
+    text-align: center;
+}

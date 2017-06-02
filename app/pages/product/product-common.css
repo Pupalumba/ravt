@@ -1,0 +1,26 @@
+.price{
+    font-size: 24;
+    color: #333;
+    font-weight:bold;
+    text-align: right;
+}
+
+.product-container{
+    padding: 10 10;
+    background-color: #ebebeb;
+
+}
+
+.product-info, Carousel{
+    opacity: 0;
+}
+
+.visible {
+    animation-name: show;
+    animation-duration: 1s;
+}
+
+@keyframes show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

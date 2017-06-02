@@ -1,0 +1,8 @@
+<ActionBar title="">
+    <NavigationButton text="go back" android.systemIcon = "ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+<StackLayout #container>
+    <Label text="Are you sure you want to logout?" textWrap="true"  *ngIf="!waitForRedirect"></Label>
+    <Label text="Will be moved to the homepage in 3 seconds" textWrap="true"  *ngIf="waitForRedirect"></Label>
+    <Button text="Logout" class="submit-button" (tap)="logout()"></Button>
+</StackLayout>

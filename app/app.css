@@ -1,0 +1,44 @@
+@import url("~/platform.css");
+
+.medium-spacing {
+    margin: 10;
+    border-top-color: gray;
+}
+
+.fa {
+    font-family: FontAwesome, fontawesome-webfont;
+    font-size:20;
+}
+
+.title, .category-title{
+    font-size: 24;
+    color: #fff;
+    background-color: #3498db;
+    font-weight:bold;
+    text-align: center;
+    margin: 10 0;
+}
+
+.small-spacing{
+    border-top-width: 1;
+    border-top-style: solid;
+    border-top-color: gray;
+    margin: 5;
+    font-size: 16;
+}
+
+.category-title{
+    margin: 10 10 0 10;
+    padding:5 0;
+}
+
+.error-message{
+    font-weight:bold;
+    font-size: 30;
+    color: #333;
+    background-image: url("~/images/danger-blue-512.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+

@@ -1,0 +1,17 @@
+<ActionBar title="Register">
+    <NavigationButton text="go back" android.systemIcon = "ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+<StackLayout #container>
+    <Label text="Register as a new user" class="register-title" textWrap="true"></Label>
+
+    <TextField hint="First name" keyboardType="text" [(ngModel)]="user.firstname"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField  hint="Last name" keyboardType="text"  [(ngModel)]="user.lastname"></TextField>
+
+    <TextField hint="User name" keyboardType="text" [(ngModel)]="user.username"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+    <TextField hint="Repeat Password" secure="true" [(ngModel)]="repassword"></TextField>
+
+    <Button text="Sign up" (tap)="register()"></Button>
+</StackLayout>

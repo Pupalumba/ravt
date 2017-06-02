@@ -1,0 +1,28 @@
+.menu {
+    background-color: #222;
+    padding:0;
+}
+
+.menu StackLayout{
+    background-image: url("~/images/menu-backgound.jpg");
+    background-repeat: repeat-x;
+    background-size: 300px 300px;
+    min-height: 650;
+}
+
+.menu .title{
+    padding: 20 10;
+    font-size: 30;
+    color: #fff;
+    background-color: transparent;
+    text-align: left;
+    margin: 0;
+}
+
+.menu Button{
+    color: #fff;
+    padding: 0 10;
+    border-width: 1;
+    text-align: left;
+    float:left;
+}

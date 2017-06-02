@@ -1,0 +1,30 @@
+<ActionBar title="Retro Audio">
+    <ActionItem  (tap)="toggle()">
+        <Label class="fa" text="&#xf0c9;"></Label>
+    </ActionItem>
+    <ActionItem text="favorites"  android.position="popup" [nsRouterLink]="['/favorites']" *ngIf="userLoggedIn"></ActionItem>
+    <ActionItem text="login"  android.position="popup"  [nsRouterLink]="['/login']" *ngIf="!userLoggedIn"></ActionItem>
+    <ActionItem text="logout"  android.position="popup"  [nsRouterLink]="['/singout']" *ngIf="userLoggedIn"></ActionItem>
+    <ActionItem text="register"  android.position="popup"  [nsRouterLink]="['/singup']" *ngIf="!userLoggedIn"></ActionItem>
+    <ActionItem text="contacts"  android.position="popup"  [nsRouterLink]="['/contacts']"></ActionItem>
+</ActionBar>
+<RadSideDrawer #drawer [transition]="sideDrawerTransition" selectionBehavior="None">
+    <ScrollView tkDrawerContent class="menu">
+        <StackLayout>
+            <Label text="Retro audio & Vintage tech" class="title" textWrap="true"></Label>
+            <Button text="Home" [nsRouterLink]="['/home/products']" nsRouterLinkActive="active"></Button>
+            <Button text="Speakers" [nsRouterLink]="['/home/product/Speakers']" nsRouterLinkActive="active"></Button>
+            <Button text="Amplifiers" [nsRouterLink]="['/home/product/Amplifiers']" nsRouterLinkActive="active"></Button>
+            <Button text="Receivers" [nsRouterLink]="['/home/product/Receivers']" nsRouterLinkActive="active"></Button>
+            <Button text="Players" [nsRouterLink]="['/home/product/Players']" nsRouterLinkActive="active"></Button>
+            <Button text="Decks" [nsRouterLink]="['/home/product/Decks']" nsRouterLinkActive="active"></Button>
+            <Button text="Tuners" [nsRouterLink]="['/home/product/Tuners']" nsRouterLinkActive="active"></Button>
+            <Button text="Gramophone" [nsRouterLink]="['/home/product/Gramophone']" nsRouterLinkActive="active"></Button>
+            <Button text="Supplies" [nsRouterLink]="['/home/product/Supplies']" nsRouterLinkActive="active"></Button>
+        </StackLayout>
+    </ScrollView>
+
+    <StackLayout tkMainContent>
+        <router-outlet></router-outlet>
+    </StackLayout>
+</RadSideDrawer>

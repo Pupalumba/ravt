@@ -1,0 +1,16 @@
+<StackLayout>
+    <Label #CategoryHeading [text]="category" class="category-title"></Label>
+    <GridLayout rows="auto, *">
+        <ListView row="1" [items]="productList" class="small-spacing" [class.visible]="listLoaded">
+            <Template let-item="item">
+                <Label [nsRouterLink]="['/product', item._id]" [text]="item.name" class="medium-spacing name" textWrap="true"></Label>
+            </Template>
+        </ListView>
+
+        <DockLayout stretchLastChild="true" row="1" *ngIf="!listLoaded && !isLoading" class="error-message">
+            <Label [text]="errorMessage" textWrap="true"   horizontalAlignment="center" verticalAlignment="center"></Label>
+        </DockLayout>
+
+        <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+    </GridLayout>
+</StackLayout>

@@ -1,0 +1,10 @@
+<ActionBar title="Login">
+    <NavigationButton text="go back" android.systemIcon = "ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+<StackLayout #container>
+    <TextField #username hint="User name" keyboardType="text" [(ngModel)]="user.username"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+    <Button text="Sign in" class="submit-button" (tap)="login()"></Button>
+</StackLayout>
